@@ -1,0 +1,74 @@
+/*le css du footer*/
+
+footer{
+    background-color:black;
+    grid-column-start: span 3;
+ 
+}
+.footer_container{
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+.sotialIcons{
+    display: flex;
+    justify-content: center;
+}
+.sotialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    padding-block: black;
+    margin: 10px;
+    border-radius: 50%;
+}
+.sotialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+.sotialIcons,a:hover{
+    background-color:skyblue;
+    transition: 0.5s;
+}
+.sotialIcons,a:hover i{
+    background-color: white;
+    transition: 0.5s;
+}
+footer .div2{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+footer .div2 h3{
+    color: #fff;
+    margin-bottom: 10px;
+}
+footer .div2 ul{
+    display: flex;
+    flex-direction: column;
+}
+footer .div2 ul a{
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: 0.5s;
+}
+footer .div2 ul a:hover{
+    letter-spacing: 0.5px;
+}
+
+
+#titre-espace{
+    background-color:skyblue;
+    padding: 1rem;
+    text-align: center;
+    margin: 0;
+}
+#img-espace{
+    margin: 0;
+    width: 100%;
+    height: auto;
+}

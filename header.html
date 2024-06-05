@@ -1,0 +1,79 @@
+<!-- c'est la partie du header -->
+<header>
+    <!-- En-tête principal -->
+    <section class="section-header">
+        <!-- Liste de navigation principale -->
+        <ul class="nav">
+            <!-- Logo -->
+            <li>
+                <a id="logo" href="home.php">
+                    <img src="NextTravel.png" alt="NextTravel" title="Accueil">
+                </a>
+            </li>
+            <!-- Lien de contact par e-mail -->
+            <li class="nav-item">
+                <a aria-current="page" class="nav-link" href="mailto:client@NextTravel.com">
+                    <img src="email.gif" alt="email" title="email" class="img-fluid">client@NextTravel.com</a>
+            </li>
+            <!-- Lien vers les agences -->
+            <li class="nav-item">
+                <a class="nav-link" href="nos-agences.php">
+                    <img src="home.gif" alt="Agences" title="Agences" class="img-fluid">Nos agences</a>
+            </li>
+            <!-- Lien de contact -->
+            <li class="nav-item">
+                <a class="nav-link" href="contact.php">
+                    <img src="email.gif" alt="contact" title="contact" class="img-fluid">Contact</a>
+            </li>
+            <!-- Lien vers les favoris -->
+            <li class="nav-item">
+                <a class="nav-link" href="favorites.php" rel="noindex, nofollow">
+                    <img src="heart.gif" alt="Best" title="Best" class="img-fluid">Favoris</a>
+            </li>
+            <!-- Lien vers l'espace entreprises -->
+            <li class="nav-item">
+                <a class="nav-link" href="espace-entreprises.php" target="_blank">
+                    <img src="handshake.gif" alt="Espace entreprises" title="Espace entreprises" class="img-fluid">Espace entreprises</a>
+            </li>
+            <!-- Lien vers le blog -->
+            <li class="nav-item">
+                <a class="nav-link" href="blog.php" target="_blank">
+                    <img src="writing.gif" alt="Blog" title="Blog" class="img-fluid">Blog</a>
+            </li>
+            <!-- Sélecteur de devise -->
+            <li class="nav-item">
+                <img src="dollar.gif" alt="Currency" title="Currency" class="img-fluid">
+                <select id="currency-select">
+                    <option value="TND">TND</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
+            </li>
+            <!-- Bouton de connexion -->
+            <li class="nav-item">
+                <a title="Se connecter compte client" class="nav-link">
+                    <button id="connection"><a href="connection.php"><img src="userlogin.png">Se connecter</a></button>
+            </li>
+        </ul>
+    </section>
+    <hr>
+    <!-- Deuxième section de l'en-tête -->
+    <section id="section-header-2">
+        <!-- Liste de navigation secondaire -->
+        <ul id="header-ul">
+            <li class="header-li"><a href="home.php">Home</a></li>
+            <li class="header-li"><a href="hotels.php">Hotels</a></li>
+            <li class="header-li"><a href="vols.php">Vols</a></li>
+            <li class="header-li"><a href="Omra.php">Omra</a></li>
+            <li class="header-li"><a href="villas.php">Villas & Apparts</a></li>
+        </ul>
+        <!-- Numéro de téléphone -->
+        <div id="phone-number">
+            <img id="phone" src="phone.gif" alt="phone">
+            +216 22 222 222
+        </div>
+        <!-- Info-bulle du numéro de téléphone -->
+        <div id="phone-tooltip" class="tooltip">Du Lundi au vendredi de 08h30 à 19h30<br>Samedi de 08h30 à 21h<br>Dimanche de 10h à 17h30</div>
+    </section>
+    <hr>
+</header>

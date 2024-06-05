@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourly - Travel agancy</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="paris.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    #scrollToBottomBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        background-color: lightgreen;
+        border: 2px solid lightgreen;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    #scrollToBottomBtn:hover {
+        background-color: darkgreen;
+        border-color: darkgreen;
+    }
+    
+
+.myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  
+  }
+
+}
+
+      </style>
+  </head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <section class="section-header">
+      <ul class="nav">
+      <li>
+          <a id="logo" href="home.html">
+              <img src="NextTravel.png" alt="NextTravel" title="Accueil" >
+          </a>
+      </li>
+          <li class="nav-item ">
+              <a aria-current="page" class="nav-link" href="mailto:client@NextTravel.com"><img src="email.gif" alt="email " title="email" class="img-fluid">client@NextTravel.com</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="nos-agences.html"><img src="home.gif" alt="Agences" title="Agences " class="img-fluid ">Nos
+                  agences</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link " href="contact.html"><img src="email.gif" alt="contact " title="contact" class="img-fluid ">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="admin.php" rel="noindex, nofollow"><img src="accounting.gif" alt="Best " title="Best " class="img-fluid ">admin</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link " href="espace-entreprises.html" target="_blank"><img src="handshake.gif"  alt="Espace entreprises" title="Espace entreprises" class="img-fluid ">Espace entreprises</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link " href="blog.html" target="_blank"><img src="writing.gif" alt="Blog " title="Blog" class="img-fluid ">Blog</a>
+          </li>
+          <li class="nav-item ">
+
+            <a class="nav-link "> <img src="dollar.gif" alt="Currency " title="Currency" class="img-fluid me-2">
+              TND
+          </a>
+          </li>
+          <li class="nav-item">
+            <a title="Se connecter compte client" class="nav-link  " >
+            <button id="connection"><a href="connection.html"> <img src="userlogin.png" >Se connecter</a></button>
+        </li>
+      </ul>
+  </section>
+  <hr>
+  <section id="section-header-2">
+    <ul id="header-ul">
+        <li class="header-li"><a href="home.html">Home</a></li>
+        <div class="dropdown-menu">
+          <label for="locationSelect">Hotels:</label>
+          <select id="locationSelect" onchange="window.location.href = this.value;">
+              <option value="">Select a location</option>
+              <option value="nice1.html">Nice</option>
+              <option value="paris1.html">Paris</option>
+              <option value="madrid1.html">Madrid</option>
+              <option value="monastir1.html">Monastir</option>
+              <option value="index1.html">Rome</option>
+          </select>
+      </div>
+        
+      </li>
+      </li>
+      
+        <li class="header-li"><a href="vols.html">Vols</a></li>
+        <li class="header-li"><a href="omra.html">Omra</a></li>
+        <li class="header-li"><a href="villas.html">Villas & Apparts</a></li>
+      </UL>
+      <div id="phone-number">
+          <img id="phone" src="phone.gif" alt="phone">
+          +216 22 222 222
+      </div>
+      <div id="phone-tooltip" class="tooltip">Du Lundi au vendredi de 08h30 à 19h30<br>Samedi de 08h30 à 21h<br>Dimanche de 10h à 17h30</div>
+  </section>
+  <hr>
+  <hr>
+    
+
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <h2 class="h1 hero-title">Voyage pour explorer le monde</h2>
+
+          
+
+          
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #TOUR SEARCH
+      -->
+
+      <section class="tour-search">
+        <div class="container">
+          <div class="container">
+            <div class="container" style="text-align: center;">
+              <form action="#" class="tour-search-form" id="search-form">
+                  <div class="input-wrapper">
+                      <label for="destination" class="input-label">Rechercher destination</label>
+                      <input type="text" name="destination" id="destination" required placeholder="Enter destination" class="input-field">
+
+                  </div>
+                  <button type="submit" class="btn btn-secondary">chercher</button>
+              </form>
+          </div>
+          </div>
+    </section>
+
+    <div class="overlay" data-overlay></div>
+
+    
+
+   
+
+      <!-- 
+        - #POPULAR
+      -->
+
+      <section class="popular" id="destination">
+        <div class="container">
+
+          <p class="section-subtitle">Rome</p>
+
+          <h2 class="h2 section-title">Les hotels du Rome</h2>
+
+          <p class="section-text">
+            Les hôtels de Rome offrent une variété d'options, des établissements de luxe offrant des vues époustouflantes sur les monuments historiques aux charmantes auberges familiales au cœur des quartiers animés. Que vous préfériez un hôtel chic près de la Place d'Espagne ou une retraite tranquille dans le quartier du Trastevere, vous trouverez un hébergement adapté à votre style et à votre budget. Profitez de l'hospitalité italienne, de la cuisine locale et de l'atmosphère incomparable de la Ville Éternelle lors de votre séjour à Rome.
+          </p>
+
+          
+
+         
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PACKAGE
+      -->
+
+      <section class="package" id="package">
+        <div class="container">
+
+          <p class="section-subtitle">les hotels plus populaires</p>
+
+          <h2 class="h2 section-title">Découvrez nos hôtels</h2>
+
+          <p class="section-text">
+            
+Découvrez une sélection d'hôtels à Rome offrant une hospitalité italienne authentique et une gamme de styles, des établissements de luxe offrant des vues sur les sites historiques aux charmantes auberges familiales situées dans des quartiers pittoresques de la ville. Choisissez parmi une variété d'options pour un séjour mémorable dans la Ville Éternelle.
+          </p>
+
+          <ul class="package-list">
+
+            <li>
+              <div class="package-card">
+
+                <figure class="card-banner">
+                  <img class="myImg"  src="149003704.jpg" alt="Experience The Great Holiday On Beach" loading="lazy" data-modal-id="myModal1">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Expérimentez les grandes vacances avec l'Hôtel Hive</h3>
+
+                  <p class="card-text">
+                    The Hive Hotel à Rome offre une expérience unique, mêlant design contemporain et confort luxueux. Situé au cœur de la ville éternelle, cet hôtel vous permet de découvrir facilement les merveilles de Rome. Avec ses équipements modernes et son ambiance accueillante, The Hive Hotel promet un séjour inoubliable dans la capitale italienne.
+                  </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+
+                        <p class="text">7D/6N</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+
+                        <p class="text">pax: 10</p>
+                      </div>
+                    </li>
+                    <li class="card-meta-item">
+                      <div class="meta-box" onclick="window.open('https://www.google.com/maps/place/The+Hive+Hotel/@41.8996539,12.4967215,15z/data=!4m9!3m8!1s0x132f61a5984d9231:0xb3b1ed3550f71e85!5m2!4m1!1i2!8m2!3d41.8996539!4d12.4967215!16s%2Fg%2F11f66tbtrc?entry=ttu', '_blank');">
+                        <ion-icon name="location"></ion-icon>
+
+                        <p class="text">Rome</p>
+                      </div>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews" id="reviewCount1">(25 reviews)</p>
+                    <p class="rare" id="stars1"> 4 stars </p>
+                    <div class="rate">
+
+                      <input type="radio" id="star5_1" name="rate1" value="5" onclick="rateProduct1(5)" />
+                      <label for="star5_1" title="text">5 stars</label>
+                      <input type="radio" id="star4_1" name="rate1" value="4" onclick="rateProduct1(4)" />
+                      <label for="star4_1" title="text">4 stars</label>
+                      <input type="radio" id="star3_1" name="rate1" value="3" onclick="rateProduct1(3)" />
+                      <label for="star3_1" title="text">3 stars</label>
+                      <input type="radio" id="star2_1" name="rate1" value="2" onclick="rateProduct1(2)" />
+                      <label for="star2_1" title="text">2 stars</label>
+                      <input type="radio" id="star1_1" name="rate1" value="1" onclick="rateProduct1(1)" />
+                      <label for="star1_1" title="text">1 star</label>
+                    </div>
+                  </div>
+
+                  <p class="price">
+                    TND 899
+                    <span>/ par nuit</span>
+                  </p>
+
+                  <a href="http://localhost/next-travel/" class="btn btn-secondary">Réservez maintenant</a>
+
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="package-card">
+
+                <figure class="card-banner">
+                  <img class="myImg" src="hotel-milton-roma.jpg" alt="Summer Holiday To The Oxolotan River" loading="lazy" data-modal-id="myModal2">
+                </figure>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">
+                    Découvrez l'élégance intemporelle et le confort raffiné de l'Hôtel Milton</h3>
+
+                  <p class="card-text">
+                    L'Hôtel Milton à Rome vous accueille avec son charme authentique et son atmosphère chaleureuse, offrant un refuge de luxe au cœur de la ville éternelle
+                  </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+
+                        <p class="text">7D/6N</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+
+                        <p class="text">pax: 10</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box" onclick="window.open('https://www.google.com/maps/place/Hotel+Milton+Roma/@41.8905561,12.5063927,15z/data=!4m2!3m1!1s0x0:0x2c12d9c95b5a4564?sa=X&ved=1t:2428&ictx=111', '_blank');">
+                        <ion-icon name="location"></ion-icon>
+
+                        <p class="text">Rome</p>
+                      </div>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews" id="reviewCount2">(30 reviews) 4 stars</p>
+                    <div class="rate">
+                      <input type="radio" id="star5_2" name="rate2" value="5" onclick="rateProduct2(5)" />
+                      <label for="star5_2" title="text">5 stars</label>
+                      <input type="radio" id="star4_2" name="rate2" value="4" onclick="rateProduct2(4)" />
+                      <label for="star4_2" title="text">4 stars</label>
+                      <input type="radio" id="star3_2" name="rate2" value="3" onclick="rateProduct2(3)" />
+                      <label for="star3_2" title="text">3 stars</label>
+                      <input type="radio" id="star2_2" name="rate2" value="2" onclick="rateProduct2(2)" />
+                      <label for="star2_2" title="text">2 stars</label>
+                      <input type="radio" id="star1_2" name="rate2" value="1" onclick="rateProduct2(1)" />
+                      <label for="star1_2" title="text">1 star</label>
+                    </div>
+                  </div>
+
+                  <p class="price">
+                    TND 604,849
+                    <span>/ par nuit</span>
+                  </p>
+
+                  <a href="http://localhost/next-travel/" class="btn btn-secondary">Réservez maintenant</a>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="package-card">
+
+                <figure class="card-banner">
+                  <img class="myImg" src="203537785.jpg" alt="Santorini Island's Weekend Vacation" loading="lazy" data-modal-id="myModal3">
+                </figure>
+                <div id="myModal1" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img01">
+                  <div id="caption"></div>
+                </div>
+                
+                <div id="myModal2" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img02">
+                  <div id="caption"></div>
+                </div>
+                
+                <div id="myModal3" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img03">
+                  <div id="caption"></div>
+                </div>
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">La Griffe Hotel incarne l'élégance contemporaine et le luxe raffiné au cœur de Rome</h3>
+
+                  <p class="card-text">
+                    La Griffe Hotel marie harmonieusement l'histoire et le luxe moderne, offrant un cadre élégant et sophistiqué pour les voyageurs exigeants. Avec ses chambres élégantes
+                  </p>
+
+                  <ul class="card-meta-list">
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+
+                        <p class="text">7D/6N</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+
+                        <p class="text">pax: 4</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box" onclick="window.open('https://www.google.com/maps/place/Hotel+La+Griffe+Roma/@41.901229,12.4945163,15z/data=!4m2!3m1!1s0x0:0x6c1a2862cc0cb532?sa=X&ved=1t:2428&ictx=111', '_blank');">
+                        <ion-icon name="location"></ion-icon>
+
+                        <p class="text">Rome</p>
+                      </div>
+                    </li>
+
+                  </ul>
+
+                </div>
+
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews" id="reviewCount3">(40 reviews) 3 stars</p>
+                    <div class="rate">
+                      <input type="radio" id="star5_3" name="rate3" value="5" onclick="rateProduct3(5)" />
+                      <label for="star5_3" title="text">5 stars</label>
+                      <input type="radio" id="star4_3" name="rate3" value="4" onclick="rateProduct3(4)" />
+                      <label for="star4_3" title="text">4 stars</label>
+                      <input type="radio" id="star3_3" name="rate3" value="3" onclick="rateProduct3(3)" />
+                      <label for="star3_3" title="text">3 stars</label>
+                      <input type="radio" id="star2_3" name="rate3" value="2" onclick="rateProduct3(2)" />
+                      <label for="star2_3" title="text">2 stars</label>
+                      <input type="radio" id="star1_3" name="rate3" value="1" onclick="rateProduct3(1)" />
+                      <label for="star1_3" title="text">1 star</label>
+                    </div>
+                  </div>
+
+                  <p class="price">
+                    TND 729,467
+                    <span>/ par nuit</span>
+                  </p>
+                  <a href="http://localhost/next-travel/" class="btn btn-secondary">Réservez maintenant</a>
+
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #GALLERY
+      -->
+
+      <section class="gallery" id="gallery">
+        <div class="container">
+
+          <p class="section-subtitle">Photo Gallery</p>
+
+          <h2 class="h2 section-title">PHOTOS DES VOYAGEURS</h2>
+
+          <p class="section-text">
+            
+Rome, ville éternelle aux mille visages, dévoile son histoire millénaire à chaque coin de rue, éblouissant ses visiteurs par sa beauté intemporelle.
+          </p>
+
+          <ul class="gallery-list">
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="c28b9778117614473dacd7a5e3d81189.jpg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="6bc7089b8899b9777d309289298bb07e.jpg"alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                  <video width="320" height="568" controls>
+                      <source src="Coffee with a view 😍 #coffee #coffeetime #trevifountain #fontanaditrevi #roma #rome #windowview.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                  </video>
+              </figure>
+          </li>
+          
+          
+           
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="60bb20e37b1599868adb532c640c6165.jpg" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="42162414a7983208c45a684fc947e505.jpg"alt="Gallery image">
+              </figure>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta" id="contact">
+        <div class="container">
+
+          <div class="cta-content">
+            
+
+            <h2 class="h2 section-title">Prêt pour des voyages inoubliables. Souvenez-vous de nous</h2>
+
+            
+          </div>
+
+          <button id="scrollToBottomBtn" class="btn btn-secondary">Contactez-nous</button>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+<footer>
+    <div class="footer_container">
+        <div class="sotialIcons">
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-instagram"></i></a>
+            <a href=""><i class="fa-brands fa-twitter"></i></a>
+            <a href=""><i class="fa-brands fa-google-plus"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+            
+        </div>
+    </div>  
+    <hr>
+    <div class="div2">
+        <div>
+            <h3>Informations utiles</h3>
+        <ul>
+            <a href="">Qui sommes-nous?</a>
+            <a href="">Next Travel vous répond</a>
+            <a href="">Contact</a>
+        </ul>
+        </div>
+        <div >
+            <h3>Contact</h3>
+        <ul>
+            <p>Adresse :</p>
+            <a href="">Tunis , Tunisie</a>
+            <a href="mailto Nexttravel@gmail.com">Nexttravel@gmail.com</a>
+            <a href=""><p>Tél:</p>(+216)55000111</a>
+        </ul>
+        </div>
+        <div >
+            <h3>Applications mobiles</h3>
+            <div><img src="appstore.png" ><img src="playstore.png" ></div>
+            
+    
+        </div>
+        
+    </div>
+    <hr>
+    <div><center><h5 style="color: #fff;margin-top: 20px;padding: 20px; ">©2024 NextTravel - Tous droits réservés.</h5></center></div>
+
+    
+    </footer>
+
+
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
+  </a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="test2.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    // Get all images with class "myImg"
+  var images = document.querySelectorAll(".myImg");
+  
+  // Loop through each image
+  images.forEach(function(image) {
+    // Get the corresponding modal ID
+    var modalId = image.getAttribute("data-modal-id");
+    var modal = document.getElementById(modalId);
+    var modalImg = modal.querySelector(".modal-content");
+    var captionText = modal.querySelector("#caption");
+  
+    // Add click event listener to each image
+    image.addEventListener("click", function() {
+      modal.style.display = "block";
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    });
+  });
+  
+  // Get all close buttons
+  var closeButtons = document.querySelectorAll(".close");
+  
+  // Loop through each close button
+  closeButtons.forEach(function(button) {
+    // Add click event listener to each close button
+    button.addEventListener("click", function() {
+      // Get the parent modal of the clicked button
+      var modal = this.parentNode;
+      modal.style.display = "none";
+    });
+  });
+  document.getElementById('scrollToBottomBtn').addEventListener('click', function() {
+    // Scroll to the bottom of the page
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth' // Optional smooth scrolling
+    });
+  });
+  document.getElementById('scrollToBottomBtn').addEventListener('click', function() {
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+  let reviewCount1 = 25; // Initial review count for product 1
+  let reviewCount2 = 30; // Initial review count for product 2
+  let reviewCount3 = 40; // Initial review count for product 3
+  
+  function rateProduct1(stars) {
+    // Calculate the current total stars
+    let currentTotalStars = reviewCount1 * 25; // Each review counts as 25 stars
+    // Add the newly rated stars to the total
+    currentTotalStars += stars;
+    // Calculate the new average rating
+    let newAverage = currentTotalStars / (reviewCount1 + 1); // Increment review count by 1 when a new review is added
+  
+    // Round the average rating to the nearest integer
+    let roundedAverage = Math.round(newAverage);
+  
+    // Update the review count for product 1
+    reviewCount1++;
+  
+    // Update the review count display for product 1 with the new average rating
+    document.getElementById("reviewCount1").textContent = `(${reviewCount1} reviews)`;
+  
+    // Update the star rating display
+    document.getElementById("stars1").textContent = `${roundedAverage} stars`;
+  }
+  
+  // Function to update review count for product 2
+  function rateProduct2(stars) {
+    reviewCount2++; // Increment review count for product 2 by 1
+    document.getElementById("reviewCount2").textContent = `(${reviewCount2} reviews)`; // Update review count display for product 2
+    // Here you can send an AJAX request to update the review count in your backend database if needed
+  }
+  
+  // Function to update review count for product 3
+  function rateProduct3(stars) {
+    reviewCount3++; // Increment review count for product 3 by 1
+    document.getElementById("reviewCount3").textContent = `(${reviewCount3} reviews)`; // Update review count display for product 3
+    // Here you can send an AJAX request to update the review count in your backend database if needed
+  }
+  
+  
+      </script>
+</body>
+
+</html>

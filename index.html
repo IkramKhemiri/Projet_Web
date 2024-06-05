@@ -1,0 +1,83 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form - Modal</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<!-- Form-->
+<div class="form">
+  <div class="form-toggle"></div>
+  <div class="form-panel one">
+    <div class="form-header">
+      <h1>Veuillez sélectionner</h1>
+    </div>
+    <div class="form-content">
+      <form>
+        <div class="form-group">
+          <label for="username">Date d'arrivée</label>
+          <input type="date" id="username" name="Date d'arrivée" required="required">
+        </div>
+        <div class="form-group">
+          <label for="username">date de départ</label>
+          <input type="date" id="username" name="date de départ" required="required">
+        </div>
+        
+        <div class="form-group">
+          <button type="submit">Soumettre</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="form-panel two">
+    <div class="form-header">
+      <h1>Veuillez sélectionner les chambres :</h1>
+    </div>
+    <div class="form-content">
+      <form>
+        <div class="form-group">
+          <label for="Nombre">Nombre</label>
+          <input type="text" id="username" name="username" required="required" pattern="[0-9]+"/>
+        </div>
+        <div class="form-group">
+          <label for="Adulte">Adulte(s)</label>
+          <input type="text" id="Adulte(s)" name="Adulte(s)" required="required" pattern="[0-9]+"/>
+        </div>
+        <div class="form-group">
+          <label for="Enfant">	Enfant(s)</label>
+          <input type="text" id="Enfant(s)" name="Enfant(s)" required="required" pattern="[0-9]+"/>
+        </div>
+        <div class="form-group">
+          <label for="text">	Lits bébé</label>
+          <input type="text" id="Lits bébé<" name="Lits bébé<" required="required" pattern="[0-9]+"/>
+        </div>
+        <div class="form-group">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://codepen.io/andytran/pen/vLmRVp.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
