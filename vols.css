@@ -1,0 +1,351 @@
+/*le css du header*/
+.section-header {
+    background-color: #fff;
+    padding: 10px; 
+    width: 100%;
+}
+
+.nav {
+    list-style-type: none;
+    margin: 0; 
+    padding: 0;
+    display: flex; 
+}
+
+.nav-item {
+    margin-right: 20px; 
+}
+
+.nav-link {
+    color: black; 
+    text-decoration: none; 
+}
+
+.nav-link:hover {
+    color: #fff;
+    font-weight: bold;
+}
+
+#logo img {
+    min-width: 50px; 
+    max-width: 300px;
+    height: auto; 
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+#connection {
+    width: 150px;
+    margin-top: 25px;
+    background-color: skyblue;
+    border: none; 
+    cursor: pointer; 
+    display: flex;
+    padding: 8px 15px;
+    color:white;
+    text-transform: uppercase;
+    border-radius: 50px;
+    text-decoration: none;
+}
+
+#connection img {
+    margin-right: 5px;
+    width: 20px;
+}
+.img-fluid {
+    margin-top: 10px;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+}
+
+hr {
+    border: none; 
+    border-top: 5px solid skyblue;
+    margin: 0; 
+}
+
+#section-header-2 {
+    background-image: url('clouds.jpg');
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    text-align: center; 
+    font-weight: bold;
+    font-size: large;
+    padding: 20px;
+    margin: 0;
+    height: 100px;
+}
+
+#header-ul {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 5px; 
+    display: flex; 
+    gap: 20px;
+}
+
+.header-li {
+    margin-right: 20px;
+}
+
+.header-li:last-child {
+    margin-right: 0; 
+}
+
+.header-li a {
+    text-decoration: none; 
+    color: black; 
+}
+
+#phone {
+    width: 50px; 
+    height: auto; 
+}
+
+#phone-number {
+    margin-top: 20px; 
+    font-size: 15px; 
+    color: black; 
+    margin-bottom: 10px;
+}
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: skyblue;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+#phone-number:hover + #phone-tooltip {
+    display: block;
+}
+#logo:hover{
+    background-color:#fff;
+}
+
+/*le css de la page courante */
+body, html {
+    height: 100%;
+    margin: 0;
+}
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px; 
+    padding: 0;
+    background-color:#fff;
+    text-decoration: double;
+    margin-top: 0;
+}
+
+.slider  {
+    width: auto;
+    overflow: hidden;
+    margin-top: 0;
+}
+  
+  .slider img {
+    height: auto;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: none;
+    justify-content: center;
+  }
+  
+  .slider img.active {
+    display: block;
+  }
+
+video {
+    width: 100%;
+    height: auto;
+}
+#video_container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55%; 
+    overflow: hidden;
+    z-index: -1;
+}
+
+#titre {
+    text-align: center;
+    margin-top: 2em;
+    color:skyblue;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+input[type="range"] {
+    width: calc(100% - 10px);
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="checkbox"],
+input[type="submit"] {
+    margin-right: 5px;
+}
+
+input[type="submit"] {
+    background-color:skyblue;
+    color: white;
+    padding: 1em 5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 45%;
+}
+
+input[type="submit"]:hover {
+    background-color: orangered;
+}
+
+.required {
+    color:orangered;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+    margin-left: 30%;
+}
+
+label {
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color:skyblue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:orangered;
+}
+
+button:disabled {
+    background-color:orangered;
+    cursor: not-allowed;
+}
+
+.passengerForm{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+}
+
+#airline {
+    text-align: center;
+    color: orangered;
+}
+#airline-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#airline-list li {
+    margin: 10px;
+    align-items: center;
+    display: flex;
+}
+.element{
+    color: orangered;
+}
+
+/* le css du footer */
+
+footer{
+    background-color:black;
+    grid-column-start: span 3;
+ 
+}
+.footer_container{
+    width: 100%;
+    padding: 70px 30px 20px;
+}
+.sotialIcons{
+    display: flex;
+    justify-content: center;
+}
+.sotialIcons a{
+    text-decoration: none;
+    padding: 10px;
+    padding-block: black;
+    margin: 10px;
+    border-radius: 50%;
+}
+.sotialIcons a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+.sotialIcons,a:hover{
+    background-color:skyblue;
+    transition: 0.5s;
+}
+.sotialIcons,a:hover i{
+    background-color: white;
+    transition: 0.5s;
+}
+footer .div2{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+footer .div2 h3{
+    color: #fff;
+    margin-bottom: 10px;
+}
+footer .div2 ul{
+    display: flex;
+    flex-direction: column;
+}
+footer .div2 ul a{
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: 0.5s;
+}
+footer .div2 ul a:hover{
+    letter-spacing: 0.5px;
+}
+
+
